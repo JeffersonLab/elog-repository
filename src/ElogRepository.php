@@ -56,7 +56,7 @@ class ElogRepository
      */
     public function find($lognumber){
         $this->entries = new Collection();
-        $response = Http::get($this->logentryUrl($lognumber));
+        $response = $this->http()->get($this->logentryUrl($lognumber));
         if ($response->ok()
             && array_key_exists('stat',$response->json())
             && $response->json()['stat'] == 'ok'
@@ -86,7 +86,7 @@ class ElogRepository
      */
     public function get(){
         $this->entries = new Collection();
-        $response = Http::get($this->queryUrl());
+        $response = $this->http()->get($this->queryUrl());
         if ($response->ok()){
             $this->entries = $this->collectEntries($response);
         }
@@ -125,4 +125,12 @@ class ElogRepository
         return $this->entriesUrl().'/'.$lognumber;
     }
 
+    /**
+     * Obtains the HTTP client handle with custom timeout limit configured.
+     *
+     * @return \Illuminate\Http\Client\PendingRequest
+     */
+    protected function http(){
+        return Http::timeout(config('elog-repository.timeout'));
+    }
 }
