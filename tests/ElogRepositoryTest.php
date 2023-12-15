@@ -33,7 +33,7 @@ class ElogRepositoryTest extends \Orchestra\Testbench\TestCase
     }
 
     /**
-     * A logentry known to exist as of 5/6/21
+     * A logentry known not to exist as of 5/6/21
      */
     public function test_it_returns_null_for_not_exists(){
         $this->assertFalse($this->repo->exists(105));

@@ -11,7 +11,8 @@
     "keywords": ["Laravel", "ElogRepository"],
     "require": {
         "illuminate/support": "~7|~8",
-        "guzzlehttp/guzzle": "^7.0.1"
+        "guzzlehttp/guzzle": "^7.0.1",
+        "laravel/sail": "^1.19"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
