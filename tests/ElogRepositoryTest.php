@@ -1,5 +1,5 @@
 <?php
-
+namespace Jlab\ElogRepository\Tests;
 
 use Jlab\ElogRepository\ElogRepository;
 /**
