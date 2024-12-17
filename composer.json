@@ -10,12 +10,12 @@
     "homepage": "https://github.com/jlab/elog-repository",
     "keywords": ["Laravel", "ElogRepository"],
     "require": {
-        "illuminate/support": "~10",
+        "illuminate/support": "~10|~11",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/sail": "^1.19"
     },
     "require-dev": {
-        "phpunit/phpunit": "~9.0",
+        "phpunit/phpunit": "~9.0|~10.0",
         "orchestra/testbench": "~8"
     },
     "autoload": {
